@@ -1,0 +1,810 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Diana Amelia</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Animate.css CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet" />
+  <style>
+    :where([class^="ri-"])::before {
+      content: "\f3c2";
+    }
+
+    body {
+      font-family: "Inter", sans-serif;
+    }
+
+    @media (max-width: 768px) {
+      .grid {
+        grid-template-columns: 1fr !important;
+      }
+
+      .text-5xl {
+        font-size: 2.5rem !important;
+      }
+
+      .text-4xl {
+        font-size: 2rem !important;
+      }
+
+      .px-8 {
+        padding-left: 1rem !important;
+        padding-right: 1rem !important;
+      }
+
+      .py-20 {
+        padding-top: 3rem !important;
+        padding-bottom: 3rem !important;
+      }
+
+      .gap-12 {
+        gap: 1.5rem !important;
+      }
+
+      .space-y-12>*+* {
+        margin-top: 1.5rem !important;
+      }
+    }
+
+    .animate-typing::after {
+      content: "|";
+      animation: blink 1s infinite;
+    }
+
+    @keyframes blink {
+
+      0%,
+      100% {
+        opacity: 1;
+      }
+
+      50% {
+        opacity: 0;
+      }
+    }
+
+    .nav-link::after {
+      content: "";
+      position: absolute;
+      width: 0;
+      height: 2px;
+      bottom: -2px;
+      left: 0;
+      background-color: #ffa167;
+      transition: width 0.3s;
+    }
+
+    .nav-link:hover::after {
+      width: 100%;
+    }
+
+    .project-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to bottom,
+          rgba(99, 198, 255, 0) 0%,
+          rgba(118, 193, 254, 0.8) 100%);
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+
+    .project-card:hover::before {
+      opacity: 1;
+    }
+
+    .fade-in-up {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.8s ease-out;
+    }
+
+    .fade-in-up.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .animate-fade-in {
+      animation: fadeInUp 0.6s ease-out;
+    }
+
+    html,
+    body {
+      max-height: max-content;
+      background: linear-gradient(135deg, #4568a9 20%, #ffffff 80%);
+    
+    }
+
+    /* White circles pattern with stronger whites */
+    .circle {
+      position: absolute;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.6);
+      box-shadow: 0 0 40px 15px rgba(255, 255, 255, 0.5);
+      backdrop-filter: blur(14px);
+      animation: float 12s ease-in-out infinite alternate;
+      filter: drop-shadow(0 0 8px rgba(255 255 255 / 0.7));
+    }
+
+    .circle1 {
+      width: 260px;
+      height: 260px;
+      top: 10%;
+      left: 12%;
+      animation-delay: 5s;
+    }
+
+    .circle2 {
+      width: 200px;
+      height: 200px;
+      top: 55%;
+      left: 75%;
+      animation-delay: 3.5s;
+    }
+
+    .circle3 {
+      width: 230px;
+      height: 230px;
+      top: 78%;
+      left: 28%;
+      animation-delay: 7s;
+    }
+
+    .circle4 {
+      width: 180px;
+      height: 180px;
+      top: 28%;
+      left: 58%;
+      animation-delay: 10.5s;
+    }
+
+        .circle4 {
+      width: 180px;
+      height: 180px;
+      top: 28%;
+      left: 58%;
+      animation-delay: 10.5s;
+    }
+
+    @keyframes float {
+      0% {
+        transform: translateY(0) translateX(0);
+        opacity: 0.6;
+      }
+
+      100% {
+        transform: translateY(-25px) translateX(20px);
+        opacity: 1;
+      }
+    }
+</style>
+  </style>
+  <div class="circle circle1"></div>
+  <div class="circle circle2"></div>
+  <div class="circle circle3"></div>
+  <div class="circle circle4"></div>
+  </style>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: "#57B5E7",
+            secondary: "#8DD3C7",
+          },
+          borderRadius: {
+            none: "0px",
+            sm: "4px",
+            DEFAULT: "8px",
+            md: "12px",
+            lg: "16px",
+            xl: "20px",
+            "2xl": "24px",
+            "3xl": "32px",
+            full: "9999px",
+            button: "8px",
+          },
+        },
+      },
+    };
+  </script>
+</head>
+<body class="bg-cream">
+  <nav class="fixed w-full bg-cream/80 backdrop-blur-md z-50 border-b border-gray-100">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between h-16 items-center">
+        <a href="#" class="text-2xl font-['font-style: italic;'] text-primary">Diana Amelia</a>
+        <div class="hidden md:flex space-x-8">
+          <a href="#home" class="nav-link relative text-gray-700 hover:text-primary transition-colors">Home</a>
+          <a href="#about" class="nav-link relative text-gray-700 hover:text-primary transition-colors">About me</a>
+
+          <a href="#hobby" class="nav-link relative text-gray-700 hover:text-primary transition-colors">Hobby</a>
+          <a href="#project" class="nav-link relative text-gray-700 hover:text-primary transition-colors">My Project</a>
+          <a href="#contact" class="nav-link relative text-gray-700 hover:text-primary transition-colors">Contact</a>
+        </div>
+        <button class="md:hidden w-10 h-10 flex items-center justify-center">
+          <i class="ri-menu-line text-xl"></i>
+        </button>
+      </div>
+    </div>
+  </nav>
+  <section id="home" class="home">
+    <header
+      class="pt-24 md:pt-32 pb-16 md:pb-20 px-4 relative overflow-hidden bg-gradient-to-br from-cream via-blue-50/30 to-primary/5">
+      <div class="project-card fade-in-up">
+        <!-- About me -->
+      </div>
+      <div class="max-w-7xl mx-auto relative z-10">
+        <div class="grid md:grid-cols-2 gap-8 md:gap-12 items-center ">
+          <div>
+            <span class="inline-block px-10 py-1 bg-primary/10 text-primary rounded-full text-sm font-medium mb-6">My
+              profile</span>
+            <h1 class="text-5xl md:text-6xl font-bold mb-6 animate-typing">
+              Hai Im Diana Amelia, and a im chef
+            </h1>
+            <p class="text-lg text-gray-600 mb-8">
+              Diana Amelia is a renowned chef celebrated for her creativity and passion in the kitchen. With a strong
+              foundation in traditional cooking and a flair for innovation, she has built a distinguished career
+              crafting dishes that blend global flavors with modern techniques. Her culinary excellence and dedication
+              have earned her a loyal following and recognition in the international food scene.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4">
+            </div>
+          </div>
+          <div class="relative">
+            <div class="relative w-full h-[300px] md:h-[500px] mt-8 md:mt-0">
+              <img src="DIANA AMELIA.JPG" alt="Hero Image 1"
+                class="absolute top-0 right-0 w-[80%] h-[80%] rounded-2xl shadow-2xl object-cover z-20" />
+              <div class="absolute -right-8 -top-8 w-48 h-48 bg-primary/10 rounded-full blur-3xl"></div>
+              <div class="absolute -left-8 -bottom-8 w-48 h-48 bg-secondary/10 rounded-full blur-3xl"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+  </section>
+  <section id="about" class="py-20 px-4 bg-gradient-to-br from-brown via-blue-50/30 to-primary/5">
+    <div class="max-w-7xl mx-auto">
+      <div class="text-center mb-16">
+        <span class="inline-block px-4 py-1 bg-white/10 text-primary rounded-full text-sm font-medium mb-4">Hello</span>
+        <h2 class="text-4xl md:text-5xl font-bold mb-6">
+          Deskripsi On me
+        </h2>
+      </div>
+      <section class="text-gray-600 body-font">
+        <div class="container px-5 py-24 mx-auto flex flex-wrap">
+          <div class="lg:w-1/2 w-full mb-10 lg:mb-0 rounded-lg overflow-hidden">
+            <img alt="feature" class="object-cover object-center h-full w-full"
+              src="WhatsApp Image 2025-05-11 at 18.41.35_d60c8a98.jpg">
+          </div>
+          <div class="flex flex-col flex-wrap lg:py-6 -mb-10 lg:w-1/2 lg:pl-12 lg:text-left text-center">
+            <div class="flex flex-col mb-10 lg:items-start items-center">
+              <div
+                class="w-12 h-12 inline-flex items-center justify-center rounded-full bg-indigo-100 text-indigo-500 mb-5">
+                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  class="w-6 h-6" viewBox="0 0 24 24">
+                  <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
+                </svg>
+              </div>
+              <div class="flex-grow">
+                <h2 class="text-gray-900 text-lg title-font font-medium mb-3">Place and date of bird</h2>
+                <p class="leading-relaxed text-base">I was born on February 28 2009, i was born in Semarang, Central
+                  java</p>
+                <path d="M5 12h14M12 5l7 7-7 7"></path>
+                </svg>
+                </a>
+              </div>
+            </div>
+            <div class="flex flex-col mb-10 lg:items-start items-center">
+              <div
+                class="w-12 h-12 inline-flex items-center justify-center rounded-full bg-indigo-100 text-indigo-500 mb-5">
+                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  class="w-6 h-6" viewBox="0 0 24 24">
+                  <circle cx="6" cy="6" r="3"></circle>
+                  <circle cx="6" cy="18" r="3"></circle>
+                  <path d="M20 4L8.12 15.88M14.47 14.48L20 20M8.12 8.12L12 12"></path>
+                </svg>
+              </div>
+              <div class="flex-grow">
+                <h2 class="text-gray-900 text-lg title-font font-medium mb-3">Address</h2>
+                <p class="leading-relaxed text-base">My home address in Ds.Kebowan Dsn.Bakalan RT/14 Rw/04 Kec.Suruh
+                  Kab.Semarang</p>
+                <path d="M5 12h14M12 5l7 7-7 7"></path>
+                </svg>
+                </a>
+              </div>
+            </div>
+            <div class="flex flex-col mb-10 lg:items-start items-center">
+              <div
+                class="w-12 h-12 inline-flex items-center justify-center rounded-full bg-indigo-100 text-indigo-500 mb-5">
+                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  class="w-6 h-6" viewBox="0 0 24 24">
+                  <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"></path>
+                  <circle cx="12" cy="7" r="4"></circle>
+                </svg>
+              </div>
+              <div class="flex-grow">
+                <h2 class="text-gray-900 text-lg title-font font-medium mb-3">My Profesi</h2>
+                <p class="leading-relaxed text-base">I am a famous chef, my cooking is know to many people, and my
+                  restaurand also has many branches. </p>
+                <path d="M5 12h14M12 5l7 7-7 7"></path>
+                </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+  </section>
+
+  <section id="hobby" class="hobby">
+    <section class="text-gray-600 body-font">
+      <div class="container px-5 py-24 mx-auto">
+        <div class="flex flex-col text-center w-full mb-20">
+          <h1 class="text-2xl font-medium title-font mb-4 text-gray-900 tracking-widest">My Hobby </h1>
+          <p class="lg:w-2/3 mx-auto leading-relaxed text-base">These are some of my hobbies that i really like, but
+            there are some that i rarely do, such as badminton</p>
+        </div>
+        <div class="flex flex-wrap -m-4">
+          <div class="p-4 lg:w-1/2">
+            <div
+              class="h-full flex sm:flex-row flex-col items-center sm:justify-start justify-center text-center sm:text-left">
+              <img alt="team" class="flex-shrink-0 rounded-lg w-48 h-48 object-cover object-center sm:mb-0 mb-4"
+                src="download (4).jpeg">
+              <div class="flex-grow sm:pl-8">
+                <h2 class="title-font font-medium text-lg text-gray-900">Mobille Legend</h2>
+                <h3 class="text-gray-500 mb-3">⭐⭐⭐⭐⭐</h3>
+                <p class="mb-4">I like playing mobile legend games, because the ga,e is exciting and fun.</p>
+                <span class="inline-flex">
+                  <a class="text-gray-500">
+                    <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                      stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+                      <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path>
+                    </svg>
+                  </a>
+                  <a class="ml-2 text-gray-500">
+                    <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                      stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+                      <path
+                        d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z">
+                      </path>
+                    </svg>
+                  </a>
+                  <a class="ml-2 text-gray-500">
+                    <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                      stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+                      <path
+                        d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z">
+                      </path>
+                    </svg>
+                  </a>
+                </span>
+              </div>
+            </div>
+          </div>
+          <div class="p-4 lg:w-1/2">
+            <div
+              class="h-full flex sm:flex-row flex-col items-center sm:justify-start justify-center text-center sm:text-left">
+              <img alt="team" class="flex-shrink-0 rounded-lg w-48 h-48 object-cover object-center sm:mb-0 mb-4"
+                src="Kara Rosenlund - Weekend in Pictures – qualia.jpeg">
+              <div class="flex-grow sm:pl-8">
+                <h2 class="title-font font-medium text-lg text-gray-900">Badminton</h2>
+                <h3 class="text-gray-500 mb-3">⭐⭐⭐⭐⭐</h3>
+                <p class="mb-4">I also like playing badminton with my siblings of friends, even to the point of
+                  forgetting the timer.</p>
+                <span class="inline-flex">
+                  <a class="text-gray-500">
+                    <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                      stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+                      <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path>
+                    </svg>
+                  </a>
+                  <a class="ml-2 text-gray-500">
+                    <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                      stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+                      <path
+                        d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z">
+                      </path>
+                    </svg>
+                  </a>
+                  <a class="ml-2 text-gray-500">
+                    <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                      stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+                      <path
+                        d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z">
+                      </path>
+                    </svg>
+                  </a>
+                </span>
+              </div>
+            </div>
+          </div>
+          <div class="p-4 lg:w-1/2">
+            <div
+              class="h-full flex sm:flex-row flex-col items-center sm:justify-start justify-center text-center sm:text-left">
+              <img alt="team" class="flex-shrink-0 rounded-lg w-48 h-48 object-cover object-center sm:mb-0 mb-4"
+                src="WhatsApp Image 2025-05-05 at 21.25.45_60c8defb.jpg">
+              <div class="flex-grow sm:pl-8">
+                <h2 class="title-font font-medium text-lg text-gray-900">Guitar</h2>
+                <h3 class="text-gray-500 mb-3">⭐⭐⭐⭐⭐</h3>
+                <p class="mb-4">I really like playing guitar, but i'm not good at it yet, but i will try to get better.
+                </p>
+                <span class="inline-flex">
+                  <a class="text-gray-500">
+                    <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                      stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+                      <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path>
+                    </svg>
+                  </a>
+                  <a class="ml-2 text-gray-500">
+                    <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                      stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+                      <path
+                        d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z">
+                      </path>
+                    </svg>
+                  </a>
+                  <a class="ml-2 text-gray-500">
+                    <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                      stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+                      <path
+                        d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z">
+                      </path>
+                    </svg>
+                  </a>
+                </span>
+              </div>
+            </div>
+          </div>
+          <div class="p-4 lg:w-1/2">
+            <div
+              class="h-full flex sm:flex-row flex-col items-center sm:justify-start justify-center text-center sm:text-left">
+              <img alt="team" class="flex-shrink-0 rounded-lg w-48 h-48 object-cover object-center sm:mb-0 mb-4"
+                src="Premium Photo _ Crop couple preparing healthy salad.jpeg">
+              <div class="flex-grow sm:pl-8">
+                <h2 class="title-font font-medium text-lg text-gray-900">Cooking</h2>
+                <h3 class="text-gray-500 mb-3">⭐⭐⭐⭐⭐</h3>
+                <p class="mb-4">The last one is cooking, i like cooking teh most but cooking is a bit complicated, it
+                  doesn't matter, i still like it.</p>
+                <span class="inline-flex">
+                  <a class="text-gray-500">
+                    <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                      stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+                      <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path>
+                    </svg>
+                  </a>
+                  <a class="ml-2 text-gray-500">
+                    <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                      stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+                      <path
+                        d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z">
+                      </path>
+                    </svg>
+                  </a>
+                  <a class="ml-2 text-gray-500">
+                    <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                      stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+                      <path
+                        d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z">
+                      </path>
+                    </svg>
+                  </a>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </section>
+  <section id="project" class="project">
+    <div class="max-w-7xl mx-auto">
+      <h2 class="text-4xl font-bold text-center mb-16">My Project</h2>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+        <div class="project-card relative group overflow-hidden rounded-2xl">
+          <img src="Screenshot 2025-05-08 160609 - Copy.png" alt="Project 1" class="w-full h-64 object-cover" />
+          <div
+            class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity p-6 flex flex-col justify-end">
+            <h3 class="text-white text-xl font-semibold mb-2">
+              Project Sejarah
+            </h3>
+            <p class="text-white/80 mb-4">Project bertemakan sejarah dan kritiik seni budaya</p>
+            <div class="flex gap-3">
+              <a href="https://dianaamelia28.github.io/web-project-1/"
+                class="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center hover:bg-white/30 transition-colors">
+                <i class="ri-eye-line text-white"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="project-card relative group overflow-hidden rounded-2xl">
+          <img src="Screenshot 2025-05-08 133919 - Copy.png" alt="Project 2" class="w-full h-64 object-cover" />
+          <div
+            class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity p-6 flex flex-col justify-end">
+            <h3 class="text-white text-xl font-semibold mb-2">
+              Project jepang
+            </h3>
+            <p class="text-white/80 mb-4">Project betemakan me review tempat-tempat indah di jepang</p>
+            <div class="flex gap-3">
+              <a href="https://dianaamelia28.github.io/web-tugas-jepang/"
+                class="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center hover:bg-white/30 transition-colors">
+                <i class="ri-eye-line text-white"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="project-card relative group overflow-hidden rounded-2xl">
+          <img src="Screenshot 2025-05-08 160209 - Copy.png" alt="Project 3" class="w-full h-64 object-cover" />
+          <div
+            class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity p-6 flex flex-col justify-end">
+            <h3 class="text-white text-xl font-semibold mb-2">
+              Project Travel
+            </h3>
+            <p class="text-white/80 mb-4">Project bertemakan yang menjual tiket liburan di indonesia</p>
+            <div class="flex gap-3">
+              <a href="https://dianaamelia28.github.io/web-travel/"
+                class="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center hover:bg-white/30 transition-colors">
+                <i class="ri-eye-line text-white"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="project-card relative group overflow-hidden rounded-2xl">
+          <img src="Screenshot 2025-05-08 161216 - Copy.png" alt="Project 4" class="w-full h-64 object-cover" />
+          <div
+            class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity p-6 flex flex-col justify-end">
+            <h3 class="text-white text-xl font-semibold mb-2">
+              Project Shopping
+            </h3>
+            <p class="text-white/80 mb-4">Project bertemakan toko online yang menjual berbagai pakaian</p>
+            <div class="flex gap-3">
+              <a href="tugas 2 nanachealsea/tugas 2 nanachealsea/index.html"
+                class="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center hover:bg-white/30 transition-colors">
+                <i class="ri-eye-line text-white"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="project-card relative group overflow-hidden rounded-2xl">
+          <img src="Screenshot 2025-05-08 161242.png" alt="Project 5" class="w-full h-64 object-cover" />
+          <div
+            class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity p-6 flex flex-col justify-end">
+            <h3 class="text-white text-xl font-semibold mb-2">
+              Project Rumah Sakit
+            </h3>
+            <p class="text-white/80 mb-4">Project bertemakan tentang fasilitas dan pelayanan rumah sakit CENA</p>
+            <div class="flex gap-3">
+              <a href="https://dianaamelia28.github.io/rumah-sakit/"
+                class="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center hover:bg-white/30 transition-colors">
+                <i class="ri-eye-line text-white"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="project-card relative group overflow-hidden rounded-2xl">
+          <img src="Screenshot 2025-05-08 161330.png" alt="Project 6" class="w-full h-64 object-cover" />
+          <div
+            class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity p-6 flex flex-col justify-end">
+            <h3 class="text-white text-xl font-semibold mb-2">
+              Project Restaurant
+            </h3>
+            <p class="text-white/80 mb-4">Project bertemakan restaurant CENA yang menyediakan makanan khas jepang, dan
+              harga yang terjangkau</p>
+            <div class="flex gap-3">
+              <a href="https://dianaamelia28.github.io/restaurant/"
+                class="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center hover:bg-white/30 transition-colors">
+                <i class="ri-eye-line text-white"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="contact" class="contact">
+    <section class="text-gray-600 body-font relative">
+      <div class="container px-5 py-24 mx-auto">
+        <div class="flex flex-col text-center w-full mb-12">
+          <h1 class="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900">Contact Us</h1>
+          <p class="lg:w-2/3 mx-auto leading-relaxed text-base"></p>
+        </div>
+        <div class="lg:w-1/2 md:w-2/3 mx-auto">
+          <div class="flex flex-wrap -m-2">
+            <div class="p-2 w-1/2">
+              <div class="relative">
+                <label for="name" class="leading-7 text-sm text-gray-600">Name</label>
+                <input type="text" id="name" name="name"
+                  class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+              </div>
+            </div>
+            <div class="p-2 w-1/2">
+              <div class="relative">
+                <label for="email" class="leading-7 text-sm text-gray-600">Email</label>
+                <input type="email" id="email" name="email"
+                  class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+              </div>
+            </div>
+            <div class="p-2 w-full">
+              <div class="relative">
+                <label for="message" class="leading-7 text-sm text-gray-600">Message</label>
+                <textarea id="message" name="message"
+                  class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 h-32 text-base outline-none text-gray-700 py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out"></textarea>
+              </div>
+            </div>
+            <div class="p-2 w-full">
+              <button
+                class="flex mx-auto text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg">Button</button>
+            </div>
+            <div class="p-2 w-full pt-8 mt-8 border-t border-gray-200 text-center">
+              <a class="text-indigo-500">2025 All Rights Reserved</a>
+              <p class="leading-normal my-5">5 Mei 2025
+                <br>By Diana Amelia
+              </p>
+              <span class="inline-flex">
+                <a class="text-gray-500">
+                  <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    class="w-5 h-5" viewBox="0 0 24 24">
+                    <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path>
+                  </svg>
+                </a>
+                <a class="ml-4 text-gray-500">
+                  <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    class="w-5 h-5" viewBox="0 0 24 24">
+                    <path
+                      d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z">
+                    </path>
+                  </svg>
+                </a>
+                <a class="ml-4 text-gray-500">
+                  <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    class="w-5 h-5" viewBox="0 0 24 24">
+                    <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
+                    <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zm1.5-4.87h.01"></path>
+                  </svg>
+                </a>
+                <a class="ml-4 text-gray-500">
+                  <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    class="w-5 h-5" viewBox="0 0 24 24">
+                    <path
+                      d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z">
+                    </path>
+                  </svg>
+                </a>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const mobileMenuBtn = document.querySelector("button");
+        const nav = document.querySelector(".md\\:flex");
+        const mobileMenu = document.createElement("div");
+        mobileMenu.className =
+          "md:hidden fixed inset-0 bg-gray-900/95 z-40 transform transition-transform duration-300 translate-x-full";
+        mobileMenu.innerHTML = `
+<div class="flex flex-col h-full p-6">
+<div class="flex justify-end mb-8">
+<button class="text-white mobile-close">
+<i class="ri-close-line text-2xl"></i>
+</button>
+</div>
+<nav class="flex flex-col space-y-6">
+<a href="#about" class="text-white text-lg hover:text-primary transition-colors">About</a>
+<a href="#expertise" class="text-white text-lg hover:text-primary transition-colors">Expertise</a>
+<a href="#experience" class="text-white text-lg hover:text-primary transition-colors">Experience</a>
+<a href="#work" class="text-white text-lg hover:text-primary transition-colors">Work</a>
+<a href="#contact" class="text-white text-lg hover:text-primary transition-colors">Contact</a>
+</nav>
+</div>
+`;
+        document.body.appendChild(mobileMenu);
+        mobileMenuBtn.addEventListener("click", function () {
+          mobileMenu.classList.remove("translate-x-full");
+          document.body.style.overflow = "hidden";
+        });
+        const closeBtn = mobileMenu.querySelector(".mobile-close");
+        closeBtn.addEventListener("click", function () {
+          mobileMenu.classList.add("translate-x-full");
+          document.body.style.overflow = "";
+        });
+        const mobileLinks = mobileMenu.querySelectorAll("a");
+        mobileLinks.forEach((link) => {
+          link.addEventListener("click", function () {
+            mobileMenu.classList.add("translate-x-full");
+            document.body.style.overflow = "";
+          });
+        });
+        const navLinks = document.querySelectorAll('a[href^="#"]');
+        navLinks.forEach((link) => {
+          link.addEventListener("click", function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute("href"));
+            if (target) {
+              window.scrollTo({
+                top: target.offsetTop - 64,
+                behavior: "smooth",
+              });
+            }
+          });
+        });
+        const form = document.querySelector("form");
+        form.addEventListener("submit", function (e) {
+          e.preventDefault();
+          const formData = new FormData(form);
+          const data = Object.fromEntries(formData);
+          console.log("Form submitted:", data);
+          const successMessage = document.createElement("div");
+          successMessage.className =
+            "fixed top-4 right-4 bg-green-500 text-white px-6 py-3 rounded-lg shadow-lg";
+          successMessage.textContent = "Message sent successfully!";
+          document.body.appendChild(successMessage);
+          setTimeout(() => {
+            successMessage.remove();
+          }, 3000);
+          form.reset();
+        });
+        // Add scroll animation
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add("animate-fade-in");
+                entry.target.style.opacity = 1;
+                entry.target.style.transform = "translateY(0)";
+              } else {
+                entry.target.classList.remove("animate-fade-in");
+                entry.target.style.opacity = 0;
+                entry.target.style.transform = "translateY(50px)";
+              }
+            });
+          },
+          {
+            threshold: 0.1,
+            rootMargin: "0px",
+          }
+        );
+        document.querySelectorAll("section").forEach((section) => {
+          section.style.opacity = 0;
+          section.style.transform = "translateY(50px)";
+          section.style.transition = "all 0.6s ease-out";
+          observer.observe(section);
+        });
+        document.querySelectorAll(".project-card").forEach((card) => {
+          card.style.opacity = 0;
+          card.style.transform = "translateY(30px)";
+          card.style.transition = "all 0.4s ease-out";
+          observer.observe(card);
+        });
+        document.querySelectorAll(".grid > div").forEach((div) => {
+          div.style.opacity = 0;
+          div.style.transform = "translateY(30px)";
+          div.style.transition = "all 0.4s ease-out";
+          observer.observe(div);
+        });
+      });
+    </script>
+</body>
+
+</html>
